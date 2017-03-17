@@ -1,0 +1,103 @@
+<html>
+  <head>
+   <title>Portfolio</title>
+   <link rel="stylesheet" href="style.css">
+<var  count1=0;
+	    count2=0;
+      count3=0;
+      avg=0;>
+<script>
+function countW(str){
+   count1 = 1;
+   words = str.match(/[ ]+/g);
+    for (i=0 ; i < words.length ; i++){
+       if (words[i] != "")
+          count1 += 1;
+    }
+
+   document.data.results.value =
+      "You typed " +
+      count1 +
+      " words!";
+}
+</script>
+<script>
+function countS(str){
+   count2 = 1;
+   sent = str.match(/["']?[A-Z][^.?!]+((?![.?!]['"]?\s["']?[A-Z][^.?!]).)+[.?!'"]+/g);
+    for (i=0 ; i < sent.length ; i++){
+       if (sent[i] != "")
+          count2 += 1;
+    }
+
+   document.data.results.value =
+      "You typed " +
+      count2 +
+      " sentences!";
+}
+</script>
+<script>
+function countSp(str){
+   count3 = 0;
+   spaces = str.match(/[ ]+/g);
+    for (i=0 ; i < spaces.length ; i++){
+       if (spaces[i] != "")
+          count3 += 1;
+    }
+
+   document.data.results.value =
+      "You typed " +
+      count3 +
+      " spaces!";
+}
+</script>
+<script>
+function average(){
+	{
+	avg = count1/count2;
+    }
+
+    document.data.results.value =
+    	"There is an average of " + avg + " words per sentence!";
+}
+</script>
+</head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+      <h1>Projects</h1>
+      <ul>
+        <li>Personal Website</li>
+      <ul>
+        <li>This is the first exercise exam.</li>
+      </ul>
+      </ul>
+<br>
+  <form class="portfolio" name="data">
+  Enter Text:
+  <br>
+  <center>
+  <textarea name=text rows=5 cols=75>
+  </textarea>
+  <br>
+  <input type=button value="Word Count" onClick="countW(document.data.text.value)";>
+  <input type=button value="Sentence Count" onClick="countS(document.data.text.value)";>
+  <input type=button value="Space Count" onClick="countSp(document.data.text.value)";>
+  <input type=button value="Avg. Words Per Sentence" onClick="average(document.data.text.value)";>
+</center>
+Results:
+<br>
+<center>
+  <textarea name=results rows=1 cols=75>
+  </textarea>
+</center>
+  </form>
+<br>
+  <nav id="nav2">
+    <a href="https://www.facebook.com/MrArchAngel">Facebook</a>
+  </nav>
+</body>
+</html>
